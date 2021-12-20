@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+      "common/*": ["src/common/*"],
+      "contact/*": ["src/contact/*"],
+      "server/*": ["src/server/*"]
+    },
+    "typeRoots": ["node_modules/@types", "src/@types"],
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
+}
