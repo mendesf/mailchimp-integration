@@ -38,5 +38,10 @@ function toSyncContactsResponse(response: BatchListMembersResponse): SyncContact
   const contacts = response.new_members.concat(response.updated_members).map(toContact);
   const syncedContacts = response.total_created + response.total_updated;
 
+  if (response.error_count > 0) {
+    const { errors } = response;
+    logger.warn('Mailchimp batchListMembers response contains errors', { errors });
+  }
+
   return { contacts, syncedContacts };
 }
